@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width:200px;
+            margin:20px;
+            background-color: black;
+            transition: all 1s linear 0s;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+
+    <script>
+        
+        let observer=new IntersectionObserver((mani)=>{
+            console.log(mani)
+            mani.forEach((entry)=>{
+                if(entry.isIntersecting)
+                entry.target.style.transform="translateX(0PX)"
+                else
+                    entry.target.style.transform="translatex(400px)"
+                
+
+            })
+
+
+        },{
+            rootMargin:"0px",
+            threshold:1})
+
+       let div= document.querySelectorAll('div')
+       div.forEach((tejas)=>{
+        observer.observe(tejas)
+       })
+
+    </script>
+</body>
+</html>

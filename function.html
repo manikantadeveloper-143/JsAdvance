@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let memo = {
+        };
+        function useMemo(callback,value) {
+            if(memo[value]) {
+                return memo[value];
+            } else {
+                let a = callback(value);
+                memo[value] = a;
+                return a;
+            }
+
+        }
+        function findFact(number) {
+            let fact = 1;
+            for(let i = number; i > 1; i--) {
+                fact *= i;
+            }
+            console.log("call back");
+            return fact;
+        }
+        console.log(useMemo(findFact,5));
+        console.log(useMemo(findFact,5));
+        console.log(useMemo(findFact,5));
+        
+    </script>
+</body>
+</html>

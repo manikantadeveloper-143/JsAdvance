@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+   div{
+  width:200px;
+  height:200px;
+  margin:20px;
+  background-color:cyan;
+  transition: all 1s linear 0s;
+  
+   }
+    
+    </style>
+</head>
+<body>
+
+   
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    <div >
+        
+    </div>
+    <div >
+
+    </div>
+    <div >
+        
+    </div>
+    <div >
+
+    </div>
+    <div >
+        
+    </div>
+    <div >
+
+    </div>
+    <div  >
+        
+    </div>
+   
+
+    <script>
+        let observer=new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting)
+                     entry.target.style.transform="translatex(0px) "
+                
+                else
+                    entry.target.style.transform="translatex(400px)"
+                
+                
+            })
+        
+        },{
+            rootMargin:"0px",
+            threshold:0.3
+        })
+
+        let divs=document.querySelectorAll('div');
+        divs.forEach(item=>{
+            observer.observe(item)
+        })
+    </script>
+    
+</body>
+</html>
